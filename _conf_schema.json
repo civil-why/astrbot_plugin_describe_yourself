@@ -1,0 +1,14 @@
+{
+  "intro_message": {
+    "description": "Bot 入群及 /自我介绍 时发送的内容",
+    "type": "text",
+    "default": "大家好！我是 XXX 机器人，我可以做 A、B、C 等等。"
+  },
+  "keyword_match_mode": {
+    "description": "关键词匹配模式",
+    "type": "string",
+    "options": ["contains", "exact"],
+    "default": "contains",
+    "hint": "contains: 包含匹配；exact: 完全相等匹配"
+  }
+}
