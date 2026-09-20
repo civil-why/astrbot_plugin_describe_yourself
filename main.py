@@ -4,19 +4,16 @@ from astrbot.api import logger
 
 
 class MyPlugin(Star):
-    def __init__(self, context: Context):
+    def __init__(self, context: Context, config: dict = None):
         super().__init__(context)
+        self.config = config or {}
 
     async def initialize(self):
         logger.info("自我介绍插件已初始化")
+        logger.info(f"插件配置: {self.config}")
 
     def _get_intro_message(self) -> str:
-        """从配置读取自我介绍文本。"""
-        cfg = self.context.get_config()
-        logger.info(f"cfg 类型: {type(cfg)}")
-        logger.info(f"cfg 内容: {cfg}")
-        logger.info(f"intro_message 值: {repr(cfg.get('intro_message'))}")
-        msg = cfg.get("intro_message", "")
+        msg = self.config.get("intro_message", "")
         if not msg:
             logger.warning("配置项 intro_message 为空，请到后台插件配置中填写")
             return "（自我介绍未配置，请到 AstrBot 后台插件配置中设置）"
