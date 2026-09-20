@@ -3,24 +3,5 @@
     "type": "text",
     "description": "Bot 入群及 /自我介绍 时发送的内容",
     "default": "大家好！我是机器人助手，我可以回答问题、查询信息、陪你聊天，请多多指教～"
-  },
-  "keyword_match_mode": {
-    "type": "string",
-    "description": "关键词匹配模式",
-    "options": ["contains", "exact"],
-    "default": "contains",
-    "hint": "contains: 消息包含关键词即触发；exact: 消息与关键词完全相等才触发"
-  },
-  "keyword_replies": {
-    "type": "object",
-    "description": "关键词与回复的映射。键(key)为关键词，值(value)为回复文本。",
-    "items": {
-      "type": "string"
-    },
-    "default": {
-      "你好": "你好呀！有什么可以帮你的？",
-      "帮助": "试试对我说「你好」吧～",
-      "你是谁": "我是一个运行在 AstrBot 上的机器人助手。"
-    }
   }
 }
