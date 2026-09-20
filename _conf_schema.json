@@ -13,7 +13,10 @@
   },
   "keyword_replies": {
     "type": "object",
-    "description": "关键词与回复的映射。键(key)为关键词，值(value)为回复文本。修改后需重载插件生效。",
+    "description": "关键词与回复的映射。键(key)为关键词，值(value)为回复文本。",
+    "items": {
+      "type": "string"
+    },
     "default": {
       "你好": "你好呀！有什么可以帮你的？",
       "帮助": "试试对我说「你好」吧～",
