@@ -13,6 +13,9 @@ class MyPlugin(Star):
     def _get_intro_message(self) -> str:
         """从配置读取自我介绍文本。"""
         cfg = self.context.get_config()
+        logger.info(f"cfg 类型: {type(cfg)}")
+        logger.info(f"cfg 内容: {cfg}")
+        logger.info(f"intro_message 值: {repr(cfg.get('intro_message'))}")
         msg = cfg.get("intro_message", "")
         if not msg:
             logger.warning("配置项 intro_message 为空，请到后台插件配置中填写")
